@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #eb9d37;
+            border: 3px solid black;
+            box-shadow: inset 10px 10px 10px rgb(253,200,102); /* inset sombra interna */
+            border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+            
+            filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+            /* centrar contenido*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+
+        }
+
+        .boxDouble{
+            width: 200px;
+
+        }
+
+        .purpleBox {
+            background-color: purple;
+            padding: 5px;
+            height: 250px;
+        }
+
+        .flexx{
+            /* propiedades de flex */
+            display: flex;
+            gap: 4px;
+
+            /* propiedades de css*/
+            color: white;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+            font-size: x-large;
+            font-weight: bold;
+
+        }
+
+        .ej1 {
+            flex-direction: row;
+            /*flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;*/
+
+        }
+
+        .ej2{
+            /*flex-direction: row;
+            flex-wrap: wrap-reverse;*/
+
+            flex-flow: row wrap;
+        }
+
+        .ej3{
+            flex-direction: column;
+            height: 500px;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+
+            justify-content: space-evenly; /* la separacion es toda por igual*/
+            justify-content: space-between; /* */
+            justify-content: space-around; /* los laterales son 1/2 sde los centrales */
+        }
+
+        .ej4{
+            height: 300px;
+            
+            align-items: start;
+            align-items: flex-end;
+            align-items: first baseline;
+            align-items: last baseline;
+            align-items: normal;
+            align-items: safe;
+            align-items: self-end;
+            align-items: baseline;
+            align-items: center;
+            
+        }
+
+        .ej5 {
+            height: 400px;
+            flex-wrap:wrap;
+            align-content:flex-start;
+            align-content: space-evenly;
+            align-content: space-around;
+            align-content: space-between;
+            align-content: last baseline;
+            align-content: first baseline;
+            
+            
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Flex direction</h3>
+
+    <p>Direccion y seleccion del eje PRINCIPAL de nuestros elementos hijos.
+        Opciones de row, column, row-reverse y column-reverse
+    </p>
+
+    <div class="flexx ej1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    
+    <h3>Flex wrap</h3>
+
+    <p>Controla si los elemtnos se ajustan a la misma fila o se desplazan a la siguiente.
+        Conserva el width y height de los elementos. Opciones:
+        nowrap, wrap,  wrap-reverse
+        <br>
+        Podemos utilizar <b>flex-flow: row wrap</b> para combinar elementos
+        (flex-direction + wrap)
+    </p>
+
+    <div class="flexx ej2 purpleBox">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box boxDouble">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>justify content</h3>
+
+    <div class="flexx ej3 purpleBox">
+        <div class="box boxDouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxDouble">3 d</div>
+    </div>
+
+    hacer ejemplos de cada uno: 
+    <h3>Align items</h3>
+
+    <div class="flexx ej4 purpleBox">
+        <div class="box boxDouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxDouble">3 d</div>
+    </div>
+
+    <h3>Align content</h3>
+
+    <div class="flexx ej5 purpleBox">
+        <div class="box boxDouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxDouble">3 d</div>
+        <div class="box boxDouble">4 d</div>
+        <div class="box">5</div>
+    </div>
+
+
+    <h3>order</h3>
+
+    <h3>Flex grow</h3>
+</body>
+</html>
