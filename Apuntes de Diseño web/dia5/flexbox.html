@@ -94,15 +94,37 @@
         .ej5 {
             height: 400px;
             flex-wrap:wrap;
+            /*solo funciona con un wrap*/
             align-content:flex-start;
             align-content: space-evenly;
-            align-content: space-around;
-            align-content: space-between;
+            
             align-content: last baseline;
             align-content: first baseline;
+            align-content: safe;
+            align-content: space-around;
+            align-content: space-between;
             
+        }
+
+        .order{
+            order: inherit;
+
+            order: initial; /* se quedará en su posicion inicial
+                            la caja 3d*/
+
+            order: -1; /* se pondrá en la primera posicion
+                        la caja 3d*/
+
+            order: 4; /* se pondrá en la ultima posicion
+                        la caja 3d*/
+            order: unset;
             
-            
+
+        }
+
+        .grow{
+            flex-grow: 10; /*la caja 3d se estirará mas que las demas
+            segun el valor que le indiquemos*/
         }
     </style>
 </head>
@@ -172,6 +194,23 @@
 
     <h3>order</h3>
 
+    <div class="flexx ej6 purpleBox">
+        <div class="box boxDouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxDouble order">3 d</div>
+        <div class="box boxDouble">4 d</div>
+        <div class="box">5</div>
+    </div>
+
     <h3>Flex grow</h3>
+
+    <div class="flexx ej7 purpleBox">
+        <div class="box boxDouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxDouble grow">3 d</div>
+        <div class="box boxDouble">4 d</div>
+        <div class="box">5</div>
+    </div>
+
 </body>
 </html>
