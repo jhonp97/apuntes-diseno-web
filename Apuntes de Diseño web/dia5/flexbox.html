@@ -81,12 +81,8 @@
             
             align-items: start;
             align-items: flex-end;
-            align-items: first baseline;
-            align-items: last baseline;
             align-items: normal;
-            align-items: safe;
-            align-items: self-end;
-            align-items: baseline;
+            align-items: stretch;
             align-items: center;
             
         }
@@ -123,7 +119,7 @@
         }
 
         .grow{
-            flex-grow: 10; /*la caja 3d se estirará mas que las demas
+            flex-grow:2 ; /*la caja 3d se estirará mas que las demas
             segun el valor que le indiquemos*/
         }
     </style>
@@ -174,7 +170,7 @@
 
     hacer ejemplos de cada uno: 
     <h3>Align items</h3>
-
+    Alinea los elementos flex en el eje secundario
     <div class="flexx ej4 purpleBox">
         <div class="box boxDouble">1 d</div>
         <div class="box">2</div>
@@ -182,7 +178,8 @@
     </div>
 
     <h3>Align content</h3>
-
+    Funciona cuando hay varias filas o columnas, controla la alineacion del espacio
+    entre las filas o columnas
     <div class="flexx ej5 purpleBox">
         <div class="box boxDouble">1 d</div>
         <div class="box">2</div>
@@ -193,7 +190,7 @@
 
 
     <h3>order</h3>
-
+    Permite cambiar el orden visual de los elementos dentro del contenedor flex
     <div class="flexx ej6 purpleBox">
         <div class="box boxDouble">1 d</div>
         <div class="box">2</div>
@@ -204,6 +201,7 @@
 
     <h3>Flex grow</h3>
 
+    Controla cuanto puede crecer un elemento dentro del contenedor
     <div class="flexx ej7 purpleBox">
         <div class="box boxDouble">1 d</div>
         <div class="box">2</div>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout horizontal</title>
+    <style>
+        /* Reset CSS*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        /* Estilos de mi Web */
+        .container {
+            display: flex;
+            background-color: teal;
+            height: 100vh; /* view height (alto de la vista)*/
+            
+
+        }
+
+        .sidebar {
+            width: 250px;/* Ancho de la barra lateral*/
+            padding: 20px;
+            background-color: beige;
+        }
+        
+        .sidebar ul {
+            list-style: none; /* se quita el formato de lista*/
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color:  black;
+        }
+
+        .sidebar ul li a:hover {
+            color: teal;
+        }
+
+        .main-content{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <!-- ul>li*3{Elemento $}+li>a[href="./index.html"]{Home} 
+            > nos metemos dentro de la etiqueta
+            * multiplica los elementos
+            {} escriben texto
+            {$} agrega un numero a cada item
+            +  agrega un etiqueta hermana
+            [] acceden a los atributos-->
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li><a href="./index.html">Home</a></li>
+            </ul>
+        </div>
+
+        <!-- div.main-content>h1{contenido principal}+p{lorem}-->
+        <div class="main-content">
+            <h1>contenido principal</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempora commodi cupiditate
+                perspiciatis nulla similique sapiente, eveniet eaque illum error rem maxime ipsam labore voluptate
+                quaerat harum quidem fuga illo?</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
