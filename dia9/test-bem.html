@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+        .header {
+            height: 20vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: turquoise;
+        }
+
+        .header__title {
+            font-size: 2rem;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu__list {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu__list--element {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            margin-right: 10px;
+            
+        }
+
+        .content {
+            height: 60vh;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .section1 {
+            width: 40vw;
+            padding: 10px;
+            background-color: cornflowerblue;
+        }
+
+        .section2 {
+            width: 50vw;
+            padding: 10px;
+            background-color: gray;
+        }
+
+        .footer {
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .footer__title {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .footer__list {
+            display: flex;
+            
+            list-style: none;
+        }
+
+        .footer__list--element {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            margin-right: 10px;
+            color: white;
+        }
+
+        .footer__list--element--especial {
+            width: 60px;
+            height: 60px;
+            border-radius: 7px;
+            background-color: red;
+            margin-right: 10px;
+            color: blue;
+            
+        }
+    </style>
+</head>
+<body class="container">
+
+    <div class="header">
+        <h1 class="header__title">Logo</h1>
+        <div class="menu">
+            <ul class="menu__list">
+                <li class="menu__list--element">...</li>
+                <li class="menu__list--element">...</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section1">
+            <h2 class="section1__title">...</h2>
+            <p class="section1__text">...</p>
+            <a class="section1__link">...</a>
+        </div>
+        <div class="section2">
+            <h2 class="section1__title">...</h2>
+            <p class="section1__text">...</p>
+            <a class="section1__link">...</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h3 class="footer__title">RSS</h3>
+        <ul class="footer__list">
+            <li class="footer__list--element">...</li>
+            <li class="footer__list--element footer__list--element--especial">...</li>
+            <li class="footer__list--element">...</li>
+        </ul>
+    </div>
+
+
+    
+</body>
+</html>
