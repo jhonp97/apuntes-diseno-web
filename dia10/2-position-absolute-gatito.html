@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 300px;
+            position: fixed;
+            /*cualquiera excepto static*/
+
+        }
+
+        .container__img {
+            opacity: 0.5;
+            width: 100%;
+        }
+
+        .caja {
+            border: solid 1px red;
+            position: absolute;
+
+
+        }
+
+        .caja--topcenter {
+            top: 50%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .caja--topleft {
+            top: 10px;
+            left: 10px;
+            ;
+
+        }
+
+        .caja--topright {
+            top: 10px;
+            right: 10px;
+            ;
+        }
+
+        .caja--bottomleft {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .caja--bottomright {
+            bottom: 10px;
+            right: 10px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Position Absolute Gatito</h1>
+
+    <div class="container">
+
+        <img class="container__img"
+            src="https://www.hola.com/imagenes/mascotas/20201104178485/consejos-gatos-para-principiantes/0-884-859/gatito-m.jpg?im=Resize=(680)"
+            alt="Gatito">
+        <div class="caja caja--topcenter">CENTER (w 100)</div>
+        <div class="caja caja--topleft">arriba IZQU</div>
+        <div class="caja caja--topright">ARRIBA DER</div>
+        <div class="caja caja--bottomleft">abajo izq</div>
+        <div class="caja caja--bottomright">abajo der</div>
+    </div>
+
+
+
+</body>
+
+</html>

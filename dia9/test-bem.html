@@ -29,16 +29,16 @@
             font-size: 2rem;
         }
 
-        .menu {
+        .header__menu {
             display: flex;
         }
 
-        .menu__list {
+        .header__items {
             display: flex;
             list-style: none;
         }
 
-        .menu__list--element {
+        .header__item{
             width: 50px;
             height: 50px;
             background-color: black;
@@ -80,13 +80,13 @@
             font-size: 2rem;
         }
 
-        .footer__list {
+        .footer__items {
             display: flex;
             
             list-style: none;
         }
 
-        .footer__list--element {
+        .footer__item {
             width: 60px;
             height: 60px;
             background-color: blue;
@@ -94,7 +94,7 @@
             color: white;
         }
 
-        .footer__list--element--especial {
+        .footer__item--especial {
             width: 60px;
             height: 60px;
             border-radius: 7px;
@@ -109,10 +109,10 @@
 
     <div class="header">
         <h1 class="header__title">Logo</h1>
-        <div class="menu">
-            <ul class="menu__list">
-                <li class="menu__list--element">...</li>
-                <li class="menu__list--element">...</li>
+        <div class="header__menu">
+            <ul class="header__items">
+                <li class="header__item">...</li>
+                <li class="header__item">...</li>
             </ul>
         </div>
     </div>
@@ -132,10 +132,10 @@
 
     <div class="footer">
         <h3 class="footer__title">RSS</h3>
-        <ul class="footer__list">
-            <li class="footer__list--element">...</li>
-            <li class="footer__list--element footer__list--element--especial">...</li>
-            <li class="footer__list--element">...</li>
+        <ul class="footer__items">
+            <li class="footer__item">...</li>
+            <li class="footer__item footer__item--especial">...</li>
+            <li class="footer__item">...</li>
         </ul>
     </div>
 
