@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(126, 18, 18);
+    transition: background 1s ease-in-out;
+    gap: 10px;
+}
+
+.body__title {
+    font-size: 3rem;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(208, 209, 250);
+    top: 20%;
+    z-index: 2;
+    transition: all 2s ease;
+    text-shadow: 10px 10px 20px black;
+
+
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pictures__size {
+    width: 40%;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+    box-shadow: 10px 10px 1rem rgb(48, 48, 48), -10px -10px 1rem rgb(48, 48, 48);
+}
+
+.pictures__mobile {
+    width: 40%;
+    opacity: 1;
+}
+
+@media screen and (min-width: 760px) {
+    .body {
+        background: rgb(36, 36, 79);
+    }
+
+    .body__title {
+        font-size: 3.5rem;
+        bottom: 15%;
+        transform: translateY(90%);
+        color: tomato;
+        text-shadow: 2px 2px 20px rgb(0, 0, 0);
+        text-decoration: underline;
+
+    }
+
+    .pictures__tablet {
+        opacity: 1;
+
+    }
+
+    .pictures__mobile {
+        opacity: 0;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .body {
+        background: rgb(18, 104, 18);
+    }
+
+    .body__title {
+        top: 40%;
+        transform: rotate(360deg);
+        color: white;
+        font-size: 4rem;
+        text-decoration: none;
+        text-shadow: 5px 5px 20px rgb(0, 0, 0);
+        
+        
+        
+
+    }
+
+    .pictures__desktop {
+        opacity: 1;
+        box-shadow: 15px 15px 20px rgb(0, 66, 14), -15px -15px 20px rgb(0, 66, 14);
+
+
+    }
+
+    .pictures__mobile,
+    .pictures__tablet {
+        opacity: 0;
+
+    }
+}

@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Actividad 4</title>
 </head>
 <body class="body">
-    <picture class="media">
-        <!-- para tablets -->
-        <source class="" media="min-width: 760px" srcset="./img/astronauta.jpg">
-    </picture>    
+    <h1  class="body__title">Título</h1>
+    <div class="pictures">
+        <!-- Para tablets -->
+        <img class="pictures__tablet pictures__size"   src="./img/astronauta.jpg" alt="foto de astronauta">
+        <!-- Para Ordenador-->
+        <img class="pictures__desktop pictures__size"  src="./img/bosque.jpg" alt="foto de bosque">
+        
+        <!-- Para movil -->
+        <img class="pictures__mobile pictures__size" src="./img/spiderman.jpg" alt="foto de spiderman">
+    </div>    
 </body>
 </html>
