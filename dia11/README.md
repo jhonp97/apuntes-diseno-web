@@ -108,6 +108,24 @@ Intentamos desarrollar siempre primero para el movil, y luego para pantallas mas
     /* reglas para desktop*/
 }
 ```
+## Utilizarlo en HTML
+
+Podemos utlizar los MQ directamente en nuestro html con el atributo "media". Antes que nada debemos asegurarnos que exista la etiqueta meta viewport en el head.
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+Ejemplos **NO recomendados**:
+´´´html         
+<link rel="stylesheet" media="screen and (min-widht: 600px)" href="./css/estilos-tablet.css">
+<link rel="stylesheet" media="screen and (min-widht: 1024px)" href="./css/estilos-dektop.css">
+
+
+<style media="screen and (min-width:600px)">
+    .body{
+        background: red;
+    }
+
+</style>
+´´´
 
 # Ejemplo de Media queries en imagenes (usando picture)
 
@@ -119,6 +137,25 @@ Intentamos desarrollar siempre primero para el movil, y luego para pantallas mas
 </picture> 
 
 ```
+
+## Trucos para un buen responsive:
+
+- Utlizar medidas relativas (%, vw, vh, em, rem) [tratar de no utilizar PX]
+- No utilizar etiquetas de Height
+
+## Comprobacion de nuestro Responsive + Media Queries
+
+- Utilizar el inspector de elementos de Chrome
+- probarla en nuestro propio dispositivo.
+- Usar el App https://responsively.app para probar en tiempo real
+
+## Links de interes
+
+[CSS MQ w3Schools](https://www.w3schools.com/css/css3_mediaqueries.asp)
+[Responsive Design w3Schools](https://www.w3schools.com/css/css_rwd_mediaqueries.asp)
+[Responsive Design MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+[SCSS + MQ](https://www.freecodecamp.org/news/learn-css-media-queries-by-building-projects/)
+
 
 # Media Queries!
 

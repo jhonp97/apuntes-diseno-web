@@ -88,17 +88,11 @@
         font-size: 4rem;
         text-decoration: none;
         text-shadow: 5px 5px 20px rgb(0, 0, 0);
-        
-        
-        
-
     }
 
     .pictures__desktop {
         opacity: 1;
         box-shadow: 15px 15px 20px rgb(0, 66, 14), -15px -15px 20px rgb(0, 66, 14);
-
-
     }
 
     .pictures__mobile,

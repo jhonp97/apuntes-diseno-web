@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web semantica</title>
+
+    <style>
+        img{
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web semantica</h1>
+
+    <h3>elementos con significado!</h3>
+
+    Ejemplos de etiquetas no semanticas: div, span <br>
+    Ejemplos de etiquetas semanticas: table, form, article <br>
+    
+
+    <img src="https://assets.hongkiat.com/uploads/html-5-semantics/document-outline-example.jpg" alt="">
+
+    <p>
+        <h3>Header</h3>
+        Es el encabezado de una pagina, seccion o articulo. Incluye elementos como el logo, texto introductorio, menu de navegacion, etc.Puede haber varios elementos header en una misma pagina, pero no puede haber un header dentro de un footer, o de otro header.
+    </p>
+
+    <p>
+        <h3>Footer</h3>
+        Es el pie de pagina de un sitio o  seccion, puede haber miultiples por pagina, puede incluir informacion como:
+        <ul>
+            <li>Informacion de contacto</li>
+            <li>Enlaces a las RRSS</li>
+            <li>Mapa del sitio</li>
+            <li>Creditos</li>
+            <li>Formlario de contacto</li>
+        </ul>
+    </p>
+
+    <p>
+        <h3>Nav</h3>
+        Define un conjunto de enlaces de navegacion, no todos los links deben estar dentro de un "Nav".
+    </p>
+
+    <p>
+        <h3>Main</h3>
+        Crea un contenedor para el contenido principal de nuestra pagina,Este debe ser unico y no debe incluir contenido que sea repetitivo en otras secciones, como por ejemplo del sidebar, logos, etc. No puede ser hijo de etiquetas como header, footer, nav, aside, article.
+    </p>
+
+    <p>
+        <h3>Aside</h3>
+        Define el contenido relacionado indirectamente con el contenido principal de la pagina, como por ejemplo, un sidebar, publicidad, etc. Elementos que solemos poner en un aside:
+        <ul>
+            <li>Publicidad</li>
+            <li>Biografia del autor</li>
+            <li>Enlaces relacionados</li>
+            <li>Informacion de perfil</li>
+
+        </ul>
+    </p>
+
+    <p>
+        <h3>Section</h3>
+        Define una seccion en una pagina donde se grupan los contenidos relacionados, y normalmente incluye un titulo. Puede haber varias secciones en una misma pagina, pero no puede haber una seccion dentro de otra seccion. <br>
+        Una web se compone de varias secciones cada una con su contenido y proposito. <br>
+        <ul>
+            <li>Capitulos</li>
+            <li>Introduccion</li>
+            <li>Noticias</li>
+            <li>Informacion de contacto</li>
+           
+        </ul>
+    </p>
+
+    <p>
+        <h3>Article</h3>
+        Define un contenido <b>INDEPENDIENTE</b>. El midmo puede ser compartido o reutilizado en otro sitio sin requerir contexto y sin perder su significado. <br>
+        Tambien suele incluir un titulo <br>
+        Ejemplos de uso:
+        <ul>
+            <li>Un post de un blog</li>
+            <li>Un articulo de una revista</li>
+            <li>Un comentario se usuario (reseña)</li>
+            <li>Un widget o tarjeta de producto</li>
+    </p>
+    <p>
+        Puedo encontrar articulos dentro de secciones, y secciones dentro de articulos.
+        Un articulo puede tener multiples secciones. Una seecion puede tener multiples articulos.
+    </p>
+
+    <p>
+        <h3>Figure</h3>
+        Define contenido independiente, como imagenes, graficos, ilustraciones, diagramas, codigo, etc. <br>
+        Tambien se puede usar para agrupar contenido relacionado, como una imagen con su titulo y descripcion.
+        <br>
+        Dentro de ella se suele utilizar la etiquetas figcaption para describir el contenido, esto es ademas del ya incluido "alt" en la etiqueta img.
+
+        <figure>
+            <img src="./ruta-a-imagen.png" alt="soy una imagen">
+            <figcaption>Fig1. - Imagen de prueba</figcaption>
+        </figure>
+    </p>
+
+    <p>
+        <h3>Mark</h3>
+        Define un texto resaltado o marcado, es decir, un texto que se quiere destacar del resto. Normalente se muestra con <mark>texto amarillo</mark> <br>
+    </p>
+</body>
+</html>
