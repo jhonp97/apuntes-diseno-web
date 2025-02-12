@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetas | arroz con pollo</title>
+    <link rel="stylesheet" href="./css/1-style.css">
 </head>
 
-<body>
+<body class="body">
 
-    <head class="header">
+    <nav class="header">
+
         <div class="header__logo">
-            <img class="header__logo--img" src="./img/logo-receta.svg" alt="logo pagina de recetas">
+            <a href="./index.html"><img class="header__logo--img" src="./img/logo-receta.svg"
+                    alt="logo pagina de recetas"></a>
         </div>
-        <nav class="header__nav">
-            <ul class="header__nav--list">
-                <li class="header__nav--item"><a href="./index.html">Inicio</a></li>
-                <li class="header__nav--item"><a href="./recetas.html">Recetas</a></li>
-                <li class="header__nav--item"><a href="./contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </head>
+        <ul class="header__nav-list">
+            <li class="header__nav--item"><a href="./index.html">Inicio</a></li>
+            <li class="header__nav--item"><a href="./recetas.html">Recetas</a></li>
+            <li class="header__nav--item"><a href="./contacto.html">Contacto</a></li>
+        </ul>
+
+    </nav>
 
     <main class="main">
         <article class="receta">
             <h1 class="receta__title">Arroz con pollo</h1>
             <p class="receta__autor">Autor: <em>Chefsito</em></p>
-            <figure>
+            <figure class="receta__figure">
                 <img class="receta__img" src="./img/autor-arroz-con-pollo.jpg"
                     alt="imagen de autor  de arroz con pollo" />
                 <figcaption><em>Chefsito</em> con arroz con pollo.</figcaption>
@@ -37,10 +39,10 @@
                 cada país se prepara de una
                 forma diferente, pero en general se trata de un plato muy sabroso y nutritivo.
             </p>
-            <hr>
+
 
             <section class="receta__section">
-                <h2 class="receta__section-title">Ingredientes</h2>
+                <h2 class="receta__section-title">Ingredientes:</h2>
                 <ul class="receta__section-list">
                     <li class="receta__section-item">1 taza de arroz</li>
                     <li class="receta__section-item">1 pechuga de pollo</li>
@@ -60,7 +62,7 @@
                 </ul>
             </section>
             <hr>
-            <section class="intrucciones__section">
+            <section class="instrucciones__section">
                 <h2 class="instrucciones__section-title">Instrucciones</h2>
                 <ol class="instrucciones__section-list">
                     <li class="instrucciones__section-item">
@@ -78,12 +80,12 @@
                     </li>
                 </ol>
             </section>
-            <figure>
+            <figure class="figure">
                 <img src="./img/arroz-con-pollo.avif" alt="imagen de arroz con pollo hecho" class="receta__img" />
                 <figcaption>Plato de arroz con pollo listo</figcaption>
             </figure>
         </article>
-        <aside>
+        <aside class="aside">
             <h2 class="aside__title">Otras recetas</h2>
             <ul class="aside__list">
                 <li class="aside__list-item"><a href="#">Arroz con leche</a></li>
@@ -92,15 +94,15 @@
                 <li class="aside__list-item"><a href="#">Gazpacho andaluz</a></li>
                 <li class="aside__list-item"><a href="#">Tiramisú</a></li>
             </ul>
-            <a href="./galeria.html">Galeria recetas</a>
+            <a class="galeria" href="./galeria.html">Galeria de recetas</a>
         </aside>
     </main>
-    <hr>
+
     <footer class="footer">
-        <ul>
-            <li class="footer__item">Recetas de cocina | 2025</li>
-            <li class="footer__item">Todos los derechos reservados</li>
-            <li class="footer__item">Redes sociales</li>
+        <ul class="footer__list">
+            <li class="footer__item"><a href="#">Recetas de cocina | 2025</a></li>
+            <li class="footer__item"><a href="#">Todos los derechos reservados</a></li>
+            <li class="footer__item"><a href="#">Redes sociales</a></li>
         </ul>
     </footer>
 
