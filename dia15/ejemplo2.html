@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        .container{
+            
+            display: grid;
+            grid-template-columns: repeat(3, 250px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 10px;
+        }
+
+        .box{
+            font-size: 2rem;
+            color: gray;
+            background-color: #f7f7f7;
+            border: solid 1px gray;
+        }
+
+        .box1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .box2{
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        .box3{
+            grid-column-start: 1;
+            grid-column-end:2;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+
+        .box4{
+            grid-area: 3 /3/4/4;
+        }
+
+        .box5{
+            grid-area: 4/2/5/3;
+        }
+
+        .box6{
+            grid-area: 4/3/5/4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1 box">uno</div>
+        <div class="box2 box">dos</div>
+        <div class="box3 box">tres</div>
+        <div class="box4 box">cuatro</div>
+        <div class="box5 box">cinco</div>
+        <div class="box6 box">seis</div>
+    </div>
+    
+</body>
+</html>
