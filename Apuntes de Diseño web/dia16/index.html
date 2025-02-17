@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>1. Stockholm-BEM</title>
+
+    <style>
+        .Grid{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+        }
+
+        .Main-img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .Main-img--2f2c{
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .Main-img-2f1c{
+            
+            grid-row: span 2;
+        }
+
+        .Main-img-1f2c{
+            grid-column: span 2;
+            
+        }
+    </style>
+</head>
+
+<body class="Body">
+    <nav class="Nav">
+        <a class="Nav-logoLink" href="index.html">
+            <img class="Nav-logo" src="./img/Logo-dark.png" alt="imagen logo"></a>
+        <ul class="Nav-list">
+            <li class="Nav-item"><a href="index.html" class="nav-itemLink nav-itemLink--green">MAIN</a></li>
+            <li class="Nav-item"><a href="about.html" class="nav-itemLink">ABOUT</a></li>
+            <li class="Nav-item"><a href="contact.html" class="nav-itemLink">CONTACT</a></li>
+        </ul>
+        <a class="Nav-menu is-open" href="#"><i class="fa-solid fa-bars"></i></i></a>
+    </nav>
+    <!--FIN DE LA BARRA DE NAVEGACION-->
+
+    <!-- INICIO DEL MAIN -->
+    <main class="Main">
+        <section class="Grid">
+            <img src="./img/Masonry-list-img-1-500x500.jpg" alt="imagen 1" class="Main-img1 Main-img">
+            <img src="./img/Masonry-list-img-2-500x500.jpg" alt="imagen 2" class="Main-img2 Main-img">
+            <img src="./img/Masonry-list-img-3-500x1000.jpg" alt="imagen 3" class="Main-img--2f1c Main-img">
+            <img src="./img/Masonry-list-img-4-500x500.jpg" alt="imagen 4" class="Main-img4 Main-img">
+            <img src="./img/Masonry-list-img-5-1000x1000.jpg" alt="imagen 5" class="Main-img--2f2c Main-img">
+            <img src="./img/Masonry-list-img-6-500x500.jpg" alt="imagen 6" class="Main-img6 Main-img">
+            <img src="./img/Masonry-list-img-7-500x500.jpg" alt="imagen 7" class="Main-img7 Main-img">
+            <img src="./img/Masonry-list-img-8-500x500.jpg" alt="imagen 8" class="Main-img8 Main-img">
+            <img src="./img/Masonry-list-img-9-1000x1000.jpg" alt="imagen 9" class="Main-img--2f2c Main-img">
+            <img src="./img/Masonry-list-img-10-500x500.jpg" alt="imagen 10" class="Main-img10 Main-img">
+            <img src="./img/Masonry-list-img-11-500x500.jpg" alt="imagen 11" class="Main-img11 Main-img">
+            <img src="./img/Masonry-list-img-12-500x1000.jpg" alt="imagen 12" class="Main-img--2f1c Main-img">
+            <img src="./img/Masonry-list-img-13-500x500.jpg" alt="imagen 13" class="Main-img13 Main-img">
+            <img src="./img/Masonry-list-img-14-500x500.jpg" alt="imagen 14" class="Main-img14 Main-img">
+            <img src="./img/Masonry-list-img-15-500x500.jpg" alt="imagen 15" class="Main-img15 Main-img">
+            <img src="./img/Masonry-list-img-16-500x500.jpg" alt="imagen 16" class="Main-img16 Main-img">
+            <img src="./img/Masonry-list-img-17-1000x500.jpg" alt="imagen 17" class="Main-img-2c1f Main-img">
+            <img src="./img/Masonry-list-img-18-500x500.jpg" alt="imagen 18" class="Main-img18 Main-img">
+            <img src="./img/Masonry-list-img-19-500x500.jpg" alt="imagen 19" class="Main-img19 Main-img">
+            <img src="./img/Masonry-list-img-21-500x500.jpg" alt="imagen 21" class="Main-img21 Main-img">
+            <img src="./img/Masonry-list-img-20-500x500.jpg" alt="imagen 20" class="Main-img20 Main-img">
+        </section>
+
+    </main>
+
+    <footer class="Footer">
+        <section class="Footer-section">
+            <img class="Footer-img" src="./img/Logo-dark.png" alt="imagen logo">
+            <p class="Footer-text">
+                Aliquam lorem ante, dapibus in, viverra quis, elit feugiat Etiam sit tellus. Phasellus rutru nulla euter
+                ameter metus varius laoreet amet orci.
+            </p>
+        </section>
+        <p class="Footer-text">© 2021 Qode Interactive, All Rights Reserved</p>
+    </footer>
+
+
+
+</body>
+
+</html>

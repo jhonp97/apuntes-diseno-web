@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 🌟 Contenedor principal */
+.Layout {
+    display: grid;
+    grid-template-areas: 
+      "header  header"
+      "sidebar topcontent"
+      "sidebar main"
+      "footer  footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 100px 1fr 60px;
+    gap: 10px;
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  /* 🎭 Áreas */
+  .Header {
+    grid-area: header;
+    background: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .Sidebar {
+    grid-area: sidebar;
+    background: #ddd;
+    padding: 20px;
+  }
+  
+  .TopContent {
+    grid-area: topcontent;
+    background: #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .Main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .Box {
+    background: #bbb;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .Footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* 📱 Diseño Responsive */
+  @media (max-width: 768px) {
+    .Layout {
+      grid-template-areas: 
+        "header"
+        "topcontent"
+        "sidebar"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+    }
+  
+    .Main {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+    </style>
+</head>
+    <div class="Layout">
+        <header class="Header">Header</header>
+        
+        <aside class="Sidebar">
+            <ul>
+                <li>Opción 1</li>
+                <li>Opción 2</li>
+                <li>Opción 3</li>
+            </ul>
+        </aside>
+    
+        <section class="TopContent">Sección superior</section>
+    
+        <main class="Main">
+            <div class="Box Box1">Caja 1</div>
+            <div class="Box Box2">Caja 2</div>
+        </main>
+    
+        <footer class="Footer">Footer</footer>
+    </div>
+    
+
+</html>
