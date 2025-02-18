@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <style>
-        /* 🌟 Contenedor principal */
+        
 .Layout {
     display: grid;
     grid-template-areas: 
@@ -21,23 +21,23 @@
     padding: 10px;
   }
   
-  /* 🎭 Áreas */
+  
   .Header {
     grid-area: header;
-    background: #f4f4f4;
+    background: #6C52D9;;
     text-align: center;
     padding: 20px;
   }
   
   .Sidebar {
     grid-area: sidebar;
-    background: #ddd;
+    background: #6C52D9;;
     padding: 20px;
   }
   
   .TopContent {
     grid-area: topcontent;
-    background: #ccc;
+    background: #6C52D9;;
     padding: 20px;
     text-align: center;
   }
@@ -50,7 +50,7 @@
   }
   
   .Box {
-    background: #bbb;
+    background: #6C52D9;;
     padding: 40px;
     text-align: center;
     border-radius: 10px;
@@ -58,40 +58,21 @@
   
   .Footer {
     grid-area: footer;
-    background: #333;
+    background: #6C52D9;;
     color: white;
     text-align: center;
     padding: 10px;
   }
   
-  /* 📱 Diseño Responsive */
-  @media (max-width: 768px) {
-    .Layout {
-      grid-template-areas: 
-        "header"
-        "topcontent"
-        "sidebar"
-        "main"
-        "footer";
-      grid-template-columns: 1fr;
-    }
-  
-    .Main {
-      grid-template-columns: 1fr;
-    }
-  }
+
   
     </style>
 </head>
-    <div class="Layout">
+    <body class="Layout">
         <header class="Header">Header</header>
         
         <aside class="Sidebar">
-            <ul>
-                <li>Opción 1</li>
-                <li>Opción 2</li>
-                <li>Opción 3</li>
-            </ul>
+            
         </aside>
     
         <section class="TopContent">Sección superior</section>
@@ -102,7 +83,7 @@
         </main>
     
         <footer class="Footer">Footer</footer>
-    </div>
+      </body>
     
 
 </html>
