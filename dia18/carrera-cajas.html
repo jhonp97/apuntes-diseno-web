@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing</title>
+    <style>
+        .Body {
+            width: 1000px;
+            border: solid 2px;
+            background-color: #ccc;
+        }
+
+        .Body:hover .Box {
+            margin-left: 900px;
+        }
+
+        .Box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: margin 4s ease;
+        }
+
+        .Box:hover {
+            margin-left: 900px;
+        }
+
+        .Box1:hover {
+            background-color: orange;
+        }
+
+        .Box1 {
+            transition: margin 4s ease, background-color 1s;
+        }
+
+      
+
+        .Box1 {
+            transition: all 4s linear;
+
+        }
+
+        .Box2 {
+            transition: margin 4s ease-in-out;
+        }
+
+        
+
+        .Box3 {
+            transition: margin 4s ease-in;
+        }
+
+        .Box4 {
+            transition: margin 4s ease-out
+        }
+
+        ;
+    </style>
+</head>
+
+<body class="Body">
+    <div class="Box1 Box">Ease</div>
+    <div class="Box2 Box">Linear</div>
+    <div class="Box3 Box">Ease-in-out</div>
+    <div class="Box4 Box">Ease-in</div>
+    <div class="Box5 Box">Ease-out</div>
+
+</body>
+
+</html>
