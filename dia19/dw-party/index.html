@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Práctica Diseño Web - Web Party de DW</title>
+    
+</head>
+
+<body class="Body">
+
+    <header class="Header">
+        <h2 class="Header-title">Header</h2>
+        <button class="Header-btn">Click me</button>
+    </header>
+
+    <aside class="Sidebar">Sidebar</aside>
+
+    <main class="Content">
+        <section class="Content-hero">
+            <h1 class="Content-heroTitle">Web party DW</h1>
+            <img class="Content-heroImg" src="https://tvazteca.brightspotcdn.com/dims4/default/3066088/2147483647/strip/true/crop/1280x720+0+0/resize/968x545!/format/webp/quality/90/?url=http%3A%2F%2Ftv-azteca-brightspot.s3.amazonaws.com%2F22%2F13%2Fe446bf9d81506a232e75a75dce2d%2F0" alt="img dragon ball">
+        </section>
+
+        <section class="Content-container">
+            <div  id="Content-id" class="Content-containerText">
+                Hazme Click
+            </div>
+        </section>
+
+        <section class="Content-gallery">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg Content-galleryImg--2fr">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg ">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg Content-galleryImg--2fr">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg Content-galleryImg--2fr">
+            <img src="https://placehold.co/600x400/EEE/31343C" alt="" class="Content-galleryImg ">
+        </section>
+    </main>
+
+    <footer class="Footer">
+        <button id="btn-modo-oscuro">Modo oscuro</button>
+    </footer>
+
+    <script>
+
+        
+
+        
+        
+            
+        
+
+        //---------------------------------------------------------------------
+        // Pao 1:obtener elementos de nuestro DOM (Documento HTML)
+        //---------------------------------------------------------------------
+        const miBoton = document.querySelector("#btn-modo-oscuro");
+        const body = document.querySelector("body");
+        const sidebar = document.querySelector(".Sidebar")
+        const contentId = document.querySelector("#Content-id");
+
+
+        //---------------------------------------------------------------------
+        // Paso 2: Crear nusestras funciones
+        //---------------------------------------------------------------------
+        function cambiarAModoOscuro() 
+        {
+           // body.classList.Add("darkMode");
+           console.log("me hicieron click");
+           console.log("mi boton es");
+           console.log(miBoton);
+           body.classList.toggle("darkMode");
+        }
+        
+        function cambiarTexto()
+            {
+               if (contentId.classList.toggle("Content-click")){
+                contentId.innerHTML = "★";
+               }else (contentId.innerHTML = "Hazme Click")
+            }
+        
+        // agregar escucha de click a miBoton, y llamar a ña fumncion cada vez que lo apretan
+        miBoton.addEventListener("click", cambiarAModoOscuro);
+        contentId.addEventListener("click", cambiarTexto);
+        
+
+
+
+
+        //---------------------------------------------------------------------
+        // Paso 3: Ejecutar nuestro codigo.
+        //---------------------------------------------------------------------
+        // cambiarAModoOscuro();
+        console.log("Mi Pagina está funcionando");
+
+
+        // Podemos agregar html dentro de nuestro contenedor
+        sidebar.innerHTML = "Holaaa, estoy dentro de sidebar";
+
+
+
+    </script>
+
+</body>
+
+</html>
