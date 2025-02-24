@@ -19,20 +19,38 @@
     <aside class="Sidebar">
         <h2 class="Sidebar-title">Mi acordeón</h2>
 
-        <div class="Sidebar-acordeon">
+        <div class="Sidebar-acordeon isActivated">
             <h3 class="Sidebar-acordeonTitle">Seccion 1</h3>
             <div class="Sidebar-acordeonText">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
             </div>
         </div>
         <div class="Sidebar-acordeon">
-            <h3 class="Sidebar-acordeonTitle">Seccion 1</h3>
+            <h3 class="Sidebar-acordeonTitle">Seccion 2</h3>
             <div class="Sidebar-acordeonText">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
             </div>
         </div>
         <div class="Sidebar-acordeon">
-            <h3 class="Sidebar-acordeonTitle">Seccion 1</h3>
+            <h3 class="Sidebar-acordeonTitle">Seccion 3</h3>
+            <div class="Sidebar-acordeonText">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
+            </div>
+        </div>
+        <div class="Sidebar-acordeon isActivated">
+            <h3 class="Sidebar-acordeonTitle">Seccion 4</h3>
+            <div class="Sidebar-acordeonText">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
+            </div>
+        </div>
+        <div class="Sidebar-acordeon">
+            <h3 class="Sidebar-acordeonTitle">Seccion 5</h3>
+            <div class="Sidebar-acordeonText">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
+            </div>
+        </div>
+        <div class="Sidebar-acordeon">
+            <h3 class="Sidebar-acordeonTitle">Seccion 6</h3>
             <div class="Sidebar-acordeonText">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat maiores, id excepturi provident maxime aperiam mollitia ducimus quaerat est ipsa. Nemo sequi nobis vitae. Consequuntur, itaque. Corrupti nostrum sint quo.</p>
             </div>
@@ -85,6 +103,15 @@
         const body = document.querySelector("body");
         //const sidebar = document.querySelector(".Sidebar")
         const contentId = document.querySelector("#Content-id");
+        const acordeon = document.querySelectorAll(".Sidebar-acordeon");
+        acordeon.forEach(item => {
+            item.addEventListener("click", () => {
+                acordeon.forEach(text => text.classList.remove("isActivated"));
+                item.classList.toggle("isActivated"); 
+            });
+        });
+
+        
 
 
         //---------------------------------------------------------------------
@@ -105,6 +132,7 @@
                 contentId.innerHTML = "★";
                }else (contentId.innerHTML = "Hazme Click")
             }
+
         
         // agregar escucha de click a miBoton, y llamar a ña fumncion cada vez que lo apretan
         miBoton.addEventListener("click", cambiarAModoOscuro);

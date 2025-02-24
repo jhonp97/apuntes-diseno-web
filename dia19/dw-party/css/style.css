@@ -10,7 +10,7 @@
     grid-template-areas: "header  header  header"
         "sidebar    main    main"
         "footer    footer     footer";
-    grid-template-columns: repeat(3, minmax(20%, 1fr));
+    grid-template-columns:  minmax(20vw, 1fr) repeat(2, minmax(40vw, 1fr));
     grid-template-rows: 100px 1fr 100px;
     transition: background-color 0.5s ease-in, color 0.5s ease-in;
 }
@@ -37,7 +37,7 @@
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 50px;
     align-items: center;
     padding: 10px;
     background-color: rgb(234, 235, 236);
@@ -45,7 +45,25 @@
 }
 
 .Sidebar-title{
-    font-size: ;
+    padding-top: 30px;
+    font-size:1.5rem ;
+}
+.Sidebar-acordeon{
+    width: 100%;
+}
+
+.Sidebar-acordeon.isActivated .Sidebar-acordeonTitle{
+    background-color: aqua;
+}
+.Sidebar-acordeon.isActivated .Sidebar-acordeonText{
+max-height: 200px;
+}
+
+.Sidebar-acordeonText{
+    max-height: 0px;
+    overflow: hidden;
+    border: solid 1px black;
+    transition: max-height 0.5s ease;
 }
 
 .Content {
