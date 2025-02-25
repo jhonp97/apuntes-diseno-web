@@ -5,24 +5,26 @@
 }
 
 .Body {
+    overflow-x: hidden;
     min-height: 100vh;
+    flex-grow: 1;
     display: grid;
     grid-template-areas: "header  header  header"
         "sidebar    main    main"
         "footer    footer     footer";
-    grid-template-columns:  minmax(20vw, 1fr) repeat(2, minmax(40vw, 1fr));
+    grid-template-columns: minmax(15%, 1fr) repeat(2, minmax(40vw, 1fr));
     grid-template-rows: 100px 1fr 100px;
     transition: background-color 0.5s ease-in, color 0.5s ease-in;
 }
 
-.darkMode{
+.darkMode {
     background-color: black;
     color: white;
-    
+
 }
 
 .Header {
-    
+
     grid-area: header;
     display: flex;
     background: gray;
@@ -33,7 +35,7 @@
 }
 
 .Sidebar {
-    margin-right: 10px;
+    margin-right: 0px;
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
@@ -44,22 +46,24 @@
 
 }
 
-.Sidebar-title{
+.Sidebar-title {
     padding-top: 30px;
-    font-size:1.5rem ;
+    font-size: 1.5rem;
 }
-.Sidebar-acordeon{
+
+.Sidebar-acordeon {
     width: 100%;
 }
 
-.Sidebar-acordeon.isActivated .Sidebar-acordeonTitle{
+.Sidebar-acordeon.isActivated .Sidebar-acordeonTitle {
     background-color: aqua;
 }
-.Sidebar-acordeon.isActivated .Sidebar-acordeonText{
-max-height: 200px;
+
+.Sidebar-acordeon.isActivated .Sidebar-acordeonText {
+    max-height: 200px;
 }
 
-.Sidebar-acordeonText{
+.Sidebar-acordeonText {
     max-height: 0px;
     overflow: hidden;
     border: solid 1px black;
@@ -81,7 +85,7 @@ max-height: 200px;
 .Content-heroTitle {
     position: absolute;
     top: 20%;
-    font-size:  5rem;
+    font-size: 5rem;
     color: lightskyblue;
     text-shadow: 0px 0px 15px black;
     z-index: 1;
@@ -119,14 +123,14 @@ max-height: 200px;
 
 .Content-containerText:not(.Content-click):hover {
     font-size: 4rem;
-    border:  solid 3px black;
+    border: solid 3px black;
     border-radius: 5px;
     background-color: lightskyblue;
     color: black;
     text-shadow: 0px 0px 2px black;
 }
 
-.Content-click{
+.Content-click {
     width: 100px;
     height: 100px;
     background-color: orange;
@@ -136,7 +140,7 @@ max-height: 200px;
     rotate: 1080deg;
 }
 
-.Content-click:hover{
+.Content-click:hover {
     scale: 1.1;
     box-shadow: 1px 1px 20px coral;
 }
@@ -152,7 +156,7 @@ max-height: 200px;
     transition: all 1s ease;
 }
 
-.Content-galleryImg--2fr{
+.Content-galleryImg--2fr {
     grid-area: 2 span / 2 span;
 }
 
@@ -171,3 +175,59 @@ max-height: 200px;
     margin-top: 20px;
     background-color: gray;
 }
+
+.fa-solid{
+    font-size: 2rem;
+    background-color: transparent;
+}
+
+
+@media (max-width: 720px) {
+    .Body {
+        display: grid;
+        gap: 20px;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        /* Una sola columna */
+        grid-template-rows: auto;
+        /* Se ajusta automáticamente */
+    }
+
+    .Header {
+        height: 10vh;
+        justify-content: space-around;
+        padding: 5px; /* Reducir espacio */
+    }
+
+    .Sidebar {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reducir espacio */
+        padding: 10px;
+    }
+
+    .Content-gallery {
+        grid-template-columns: 1fr; /* 2 columnas en móviles */
+    }
+
+    .Content-galleryImg, .Content-galleryImg--2fr{
+        width: 100%;
+        grid-area: 1 span;
+    }
+
+    .Content-heroTitle{
+        font-size: 1.5rem;
+    }
+
+
+.Footer {
+    grid-area: footer;
+}
+}
+
+
+
