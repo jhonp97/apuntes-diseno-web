@@ -161,7 +161,7 @@ Ejercicio 3: Arrays de objetos
 const estudiantes = [{ nombre: "Jhon", nota: 100},
                      {  nombre: "Julano", nota: 77},
                      {  nombre: "Sutano", nota: 25}
-                    ]                  
+                    ];                  
 ```
 - Imprime en la consola el nombre del segundo estudiante.
 `console.log(estudiantes[1].nombre);`
@@ -177,7 +177,7 @@ Ejercicio 4: Métodos en objetos
 
 - Crea un objeto llamado calculadora con las propiedades a y b (números) y un método sumar que retorne la suma de a y b.
 ```js
-let calculadora = { a: 8,
+const calculadora = { a: 8,
                     b: 10,
                    sumar(){
                     console.log("la suma de a y b dá como resultado: ", this.a + this.b);
