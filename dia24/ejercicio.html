@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Content">
+        <h1>Bienvenidos a JavaScript</h1>
+        <button id="suma">Suma 1</button>
+        <button id="resta">Resta 1</button>
+        <button id="mult">Multiplicar x5</button>
+
+        <div class="Clicks">
+            <h2>Cantidad de clicks</h2>
+            <p id="contador">0</p>
+        </div>
+
+        <!-- convertir el input en uno para recibir numeros, que el usurario -->
+        <!-- ingrese su edad, y que al hacer click en un boton entrar me diga si soy mayor o menor de edad -->
+
+        <input  id="inputEdad" type="number">
+        <button id="entrar">Entrar</button>
+
+    </div>
+        <script>
+            const input = document.querySelector("#inputEdad")
+            const boton = document.querySelector("#entrar")
+            boton.addEventListener("click", edad);
+
+            function edad(){
+                if (input.value>=18 & input.value<=120){
+                    alert("Bienvenido, eres mayor de edad");
+                }else if(input.value>120){
+                    alert(`vuelve a ingresar tu edad, no puedes tener, ${input.value} años`);
+                }else if(input.value<=0){
+                    alert("Es imposible que tengas esa edad");
+                }else{
+                    alert("Eres menor de edad");
+                }
+
+                }
+            
+
+            const suma = document.getElementById("suma");
+            suma.addEventListener("click", sumar);
+
+            const resta = document.getElementById("resta");
+            resta.addEventListener("click", restar);
+
+            const mult = document.getElementById("mult");
+            mult.addEventListener("click", multi);
+
+            const cont = document.getElementById("contador");
+            let contador = 0;
+
+
+
+            function sumar() {
+                contador = contador + 1;
+                cont.textContent = contador;
+            };
+
+            function restar() {
+                contador = contador - 1;
+                cont.textContent = contador;
+            };
+
+            function multi() {
+                contador = contador * 5;
+                cont.textContent = contador;
+            };
+
+        </script>
+</body>
+
+</html>
