@@ -36,4 +36,23 @@ for(i=0;i<2; i++){
 
 let num1 =10;
 let num2 =20
+
+
+
+//bucle usando while (mientras)
+let=0
+while(i<10){
+    //inicio del bucle
+console.log(i);
+//fin del bucle
+i++;
+}
+
+// Bucle Do - While
+// Funciona igual que el while, pero se ejecuta al menos una vez.
+let i =25;
+do{
+    console.log(i);
+    i++
+}while (1<10);
 ```

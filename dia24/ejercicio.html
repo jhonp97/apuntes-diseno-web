@@ -19,8 +19,8 @@
             <p id="contador">0</p>
         </div>
 
-        <!-- convertir el input en uno para recibir numeros, que el usurario -->
-        <!-- ingrese su edad, y que al hacer click en un boton entrar me diga si soy mayor o menor de edad -->
+        convertir el input en uno para recibir numeros, que el usurario
+         ingrese su edad, y que al hacer click en un boton entrar me diga si soy mayor o menor de edad
 
         <input  id="inputEdad" type="number">
         <button id="entrar">Entrar</button>
@@ -32,10 +32,10 @@
             boton.addEventListener("click", edad);
 
             function edad(){
-                if (input.value>=18 & input.value<=120){
+                if (input.value>=18 && input.value<=120){
                     alert("Bienvenido, eres mayor de edad");
                 }else if(input.value>120){
-                    alert(`vuelve a ingresar tu edad, no puedes tener, ${input.value} años`);
+                    alert(`vuelve a ingresar tu edad, no puedes tener, ${input.value} años `);
                 }else if(input.value<=0){
                     alert("Es imposible que tengas esa edad");
                 }else{

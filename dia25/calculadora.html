@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        Body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Calculadora {
+            border: solid 2px;
+            width: 40%;
+            height: 70%;
+            display: grid;
+            grid-template-areas: "input input input input"
+                                "op op op op"
+                                "num num num num"
+                                "num num num num"
+                                "num num num num";
+            
+            grid-template-columns:repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .Calculadora-input {
+            grid-template: 1/5/1/5;
+            grid-area: input;
+
+            width: 100%;
+            height: 50px;
+            
+        }
+        .Calculadora-op{
+            width: 50px;
+            height: 50px;
+            grid-area: op;
+        }
+
+        .Calculadora-num {
+            grid-area: num;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body class="Body">
+    <h1 class="Body-title">Calculadora</h1>
+
+    <div class="Calculadora">
+        <input  class="Calculadora-input" type="number" id="number"     name="number" placeholder="ingresa un numero">
+        
+            <button class="Calculadora-op" id="suma">+</button>
+            <button class="Calculadora-op" id="resta">-</button>
+            <button class="Calculadora-op" id="multi">*</button>
+            <button class="Calculadora-op" id="division">/</button>
+            <button class="Calculadora-op" id="igual">=</button>
+        
+    
+
+        <button class="Calculadora-num" id="num" value="1">1</button>
+        <button class="Calculadora-num" id="num" value="2">2</button>
+        <button class="Calculadora-num" id="num" value="3">3</button>
+        <button class="Calculadora-num" id="num" value="4">4</button>
+        <button class="Calculadora-num" id="num" value="5">5</button>
+        <button class="Calculadora-num" id="num" value="6">6</button>
+        <button class="Calculadora-num" id="num" value="7">7</button>
+        <button class="Calculadora-num" id="num" value="8">8</button>
+        <button class="Calculadora-num" id="num" value="9">9</button>
+        <button class="Calculadora-num" id="num" value="0">0</button>
+    
+    </div>
+
+    <script>
+        const input = document.getElementById("number");
+        const resultado = document.getElementById("result")
+
+        const suma = document.getElementById("suma");
+        const resta = document.getElementById("resta");
+        const multi = document.getElementById("multi");
+        const division = document.getElementById("division");
+        const igual = document.querySelector("#igual");
+
+        const num = document.getElementById("num");
+
+        let numIngreasado = 0;
+        let numResultado = 0;
+        
+        input.value = numIngreasado;
+    </script>
+</body>
+
+</html>
