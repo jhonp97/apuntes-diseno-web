@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="number" placeholder="Ingrese un numero">
+    <button id="boton">adivinar</button>
+    <p id="resultado"></p>
+    <script>
+        const number = document.querySelector("#number");
+        const boton = document.querySelector("#boton");
+        const resultado = document.querySelector("#resultado");
+
+        let numRandom = Math.floor(Math.random()*11);
+        console.log(numRandom);
+        
+         
+        boton.addEventListener("click",()=>{
+            console.log(number.value);
+            if (number.value == numRandom){ 
+                resultado.textContent = "Adivinaste el numero";
+                resultado.style.color="green";
+            }else if(number.value>numRandom){
+                resultado.textContent = "El numero es menor";
+                resultado.style.color="black";
+            }else if (number.value ==""){
+                resultado.textContent = "Ingrese un numero valido";
+                resultado.style.color="red";
+            }else {
+                resultado.textContent = "El numero es mayor";
+                resultado.style.color="black";
+            }
+        });
+               //** else number > numRandon:
+              //  resultado.textContent = "El numero es menor";
+        //
+              //  case number < numRandon:
+              //  resultado.textContent = "El numero es mayor";
+               // break;
+                
+    
+            
+
+    </script>
+</body>
+</html>

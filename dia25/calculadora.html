@@ -4,104 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculadora</title>
+    <title>Calculadora</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         Body {
-            width: 100vw;
-            height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .Body-title {
+            padding: 20px;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 1px rgb(140, 250, 213);
         }
 
         .Calculadora {
-            border: solid 2px;
-            width: 40%;
-            height: 70%;
-            display: grid;
-            grid-template-areas: "input input input input"
-                                "op op op op"
-                                "num num num num"
-                                "num num num num"
-                                "num num num num";
-            
-            grid-template-columns:repeat(4, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            background-color: lightcyan;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
             gap: 5px;
-            font-size: 1rem;
-            font-weight: bold;
+            width: 40vw;
+            height: 50vh;
+            border: solid 3px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px;
+
         }
 
-        .Calculadora-input {
-            grid-template: 1/5/1/5;
-            grid-area: input;
+        .inputNumber {
+            width: 95%;
+            height: 50px;
+            margin: 15px;
+            padding: 15px;
+            font-size: 1.5rem;
+        }
 
+        .Btns {
+            background-color: rgb(202, 236, 247);
+            border-radius: 10px;
             width: 100%;
-            height: 50px;
-            
-        }
-        .Calculadora-op{
-            width: 50px;
-            height: 50px;
-            grid-area: op;
+            height: 100%;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 50px repeat(4, 1fr);
+            padding: 5px;
+            font-size: 1.2rem;
+
         }
 
-        .Calculadora-num {
-            grid-area: num;
-            width: 50px;
-            height: 50px;
+        .Btns-reset {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            grid-column: 1/6;
+            text-align: center;
+            
+
+
+        }
+
+        .Btns-resetItem {
+            width: 15%;
+            height: 100%;
+            background-color: lightgoldenrodyellow;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+
+        .Btns-resetItem:hover {
+            background-color: rgb(236, 236, 190);
+            cursor: pointer;
+        }
+
+        .Btns-btn {
+            background-color: lightgray;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+
+        .Btns-btn:hover {
+            background-color: rgb(160, 178, 179);
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body class="Body">
+
     <h1 class="Body-title">Calculadora</h1>
 
     <div class="Calculadora">
-        <input  class="Calculadora-input" type="number" id="number"     name="number" placeholder="ingresa un numero">
-        
-            <button class="Calculadora-op" id="suma">+</button>
-            <button class="Calculadora-op" id="resta">-</button>
-            <button class="Calculadora-op" id="multi">*</button>
-            <button class="Calculadora-op" id="division">/</button>
-            <button class="Calculadora-op" id="igual">=</button>
-        
-    
+        <input type="text" name="numero" class="inputNumber" id="inputNumber" placeholder="0">
 
-        <button class="Calculadora-num" id="num" value="1">1</button>
-        <button class="Calculadora-num" id="num" value="2">2</button>
-        <button class="Calculadora-num" id="num" value="3">3</button>
-        <button class="Calculadora-num" id="num" value="4">4</button>
-        <button class="Calculadora-num" id="num" value="5">5</button>
-        <button class="Calculadora-num" id="num" value="6">6</button>
-        <button class="Calculadora-num" id="num" value="7">7</button>
-        <button class="Calculadora-num" id="num" value="8">8</button>
-        <button class="Calculadora-num" id="num" value="9">9</button>
-        <button class="Calculadora-num" id="num" value="0">0</button>
-    
+        <div class="Btns">
+            <div class="Btns-reset">
+                <button class="Btns-resetItem">C</button>
+            </div>
+
+            <button class="Btns-btn">7</button>
+            <button class="Btns-btn">8</button>
+            <button class="Btns-btn">9</button>
+            <button class="Btns-op" id="divi">/</button>
+            <button class="Btns-op" id="multi">*</button>
+            <button class="Btns-btn">4</button>
+            <button class="Btns-btn">5</button>
+            <button class="Btns-btn">6</button>
+            <button class="Btns-op" id="suma">+</button>
+            <button class="Btns-op" id="resta">-</button>
+            <button class="Btns-btn">1</button>
+            <button class="Btns-btn">2</button>
+            <button class="Btns-btn">3</button>
+            <button class="Btns-op" id="resto">%</button>
+            <button class="Btns-igual" id="igual"> =</button>
+            <button class="Btns-btn">0</button>
+
+
+        </div>
     </div>
+<script>
+    const input = document.querySelector("#inputNumber");
+    const btns = document.querySelectorAll(".Btns-btn");
+    const btnsOp = document.querySelectorAll(".Btns-op");
+    const btnsIgual = document.querySelector(".Btns-igual");
+    const btnsReset = document.querySelector(".Btns-resetItem");
+    const divi = document.querySelector("#divi");
+    const multi = document.querySelector("#multi");
+    const suma = document.querySelector("#suma");
+    const resta = document.querySelector("#resta");
+    const resto = document.querySelector("#resto");
+    const igual = document.querySelector("#igual");
 
-    <script>
-        const input = document.getElementById("number");
-        const resultado = document.getElementById("result")
+    
 
-        const suma = document.getElementById("suma");
-        const resta = document.getElementById("resta");
-        const multi = document.getElementById("multi");
-        const division = document.getElementById("division");
-        const igual = document.querySelector("#igual");
+    
 
-        const num = document.getElementById("num");
+        // para que los botones se pongan en el input
+    for(let i = 0; i < btns.length; i++){
+        btns[i].addEventListener("click", () => {
+            input.value += btns[i].textContent;
+        });
+    }
+    //boton de operadores
+    for(let i = 0; i < btnsOp.length; i++){
+        btnsOp[i].addEventListener("click", () => {
+            input.value += btnsOp[i].textContent;
+        });
+    }
+    
+    //botn de resetar "C"
+    btnsReset.addEventListener("click", () => {
+        input.value = "0";
+    });
 
-        let numIngreasado = 0;
-        let numResultado = 0;
-        
-        input.value = numIngreasado;
-    </script>
+    igual.addEventListener("click", () => {
+        input.value = eval(input.value);
+    });
+
+    
+</script>
+
 </body>
-
 </html>
