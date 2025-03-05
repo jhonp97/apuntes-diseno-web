@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad</title>
+
+    <style>
+        .resaltado{
+            color: blue;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>ACT #1: Mayúsculas y Minúsculas en Títulos</h1>
+        <h1 id="titulo">Mi titulo</h1>
+        <div>...</div>
+        <div id="div2">...</div>
+    </section>
+    <br>
+    <hr>
+    <section>
+        <h2>ACT #2: Extracción de Iniciales</h2>
+        <p id="nombre">Jhon Perez <span id="inicial"></span></p>
+    </section>
+    <br>
+    <hr>
+    <section>
+        <h2>ACT #3: Reemplazo de Palabras en un Input</h2>
+        <input type="textarea" id="inputt" value="soy un texto, este texto sera resaltado en el texto modificado">
+        <button id="cambiar">Resaltar</button>
+        <div id="resultado"></div>
+    </section>
+    
+    
+
+
+    <script>
+    
+    // ACTIVIDAD #1 Mayúsculas y Minúsculas en Títulos//
+       let titulo =document.querySelector("#titulo").innerText;
+        let div = document.querySelector("div");
+        let div2 = document.querySelector("#div2");
+        
+    
+        div.textContent = titulo.toUpperCase();
+        div2.textContent = titulo.toLowerCase();
+
+         // ACTIVIDAD #2 Extracción de Iniciales//
+        let nombre =document.querySelector("#nombre").innerText;
+        let inicial = document.querySelector("#inicial");
+       
+        lista = nombre.split(""); 
+    
+        //inicial.textContent = lista[0]+lista[5];
+        inicial.textContent =`(${lista.slice(0,1)+lista.slice(5,6)})`;
+
+
+        // ACTIVIDAD #3 Reemplazo de Palabras en un Input //
+        let input =document.getElementById("inputt").value;
+        let boton = document.querySelector("#cambiar");
+        let resultado = document.querySelector("#resultado");
+
+        
+        let reemplazo = input.replaceAll("texto",`<span class="resaltado">texto</span>`);
+        
+       boton.addEventListener("click",()=>{
+            resultado.innerHTML = reemplazo;
+            boton.textContent="Limpiar";
+      })
+      
+    </script>
+</body>
+</html>
