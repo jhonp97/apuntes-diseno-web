@@ -91,6 +91,7 @@ console.log("reemplazar 'hola' por 'Hola': ", frase.replace("hola", "Hola")); //
 console.log("reemplazar 'hola' por 'Hola': ", frase.replaceAll("hola", "HOLA")); // cambia todos "hola" por "HOLA"
 
 // trim()
+// iDEAL PARA <TEXTAREA> Y PARA FORMULARIOS
 let frase = "      Hola mi nombre es Luka      ";
 console.log(frase.trim()); // "Hola mi nombre es Luka"
 
@@ -112,7 +113,7 @@ let risa="Ja";
 console.log("Me causa mucha gracias: " risa.repeat(3))// JaJaJa
 
 let frase="HolaComo Andan?";
-console.log(frase.length); //15
+console.log(frase.length); //15 caracteres incluyendo simbolos y espacios
 ```
 
 Podemos combinar los metodos 
@@ -127,6 +128,14 @@ let resultado =frase.trim()// elimina espacios delante y detras
                     
 
 resultado; // ME ENCANTA JAVASCRIPT EN DISEÑO WEB
+
+
+const hobbies = ["futbol", "programar", "Leer"];
+
+for (i=0 i< hobbies.lenght ; i++){
+    const hobbie =hobbies[i];
+    console.log(hobbie); // "futbol", "programar", "Leer"
+}
 
 
 ```

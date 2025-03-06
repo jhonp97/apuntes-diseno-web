@@ -11,6 +11,12 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
+
+        .hl{
+            color: rgb(62, 237, 244);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -33,7 +39,18 @@
         <input type="textarea" id="inputt" value="soy un texto, este texto sera resaltado en el texto modificado">
         <button id="cambiar">Resaltar</button>
         <div id="resultado"></div>
+        <hr>
+        <input type="text" id="input3" value="" placeholder="ingrese texto">
+        <button id="boton3">revisar texto</button>
+        <div id="div3">
+            ejemplo de texto si digo <span class="hl">CEI</span> debe aparecer enytre'span'
+        </div>
     </section>
+    <hr><hr>
+    <h2>FILTRADO DE PALABRAS</h2>
+    <textarea name="texto" id="textarea"></textarea>
+    <br>
+    <span id="span">mi comentario</span>
     
     
 
@@ -71,6 +88,44 @@
             resultado.innerHTML = reemplazo;
             boton.textContent="Limpiar";
       })
+      // act3 version 2
+      // 1. DECLARO VARIABLES
+      const input3 = document.getElementById("input3")
+      const boton3 = document.getElementById("boton3")
+      const div3 = document.getElementById("div3")
+      const marca = "CEI"
+      const nuevaMarca = `<span class="hl">${marca}</span>`
+
+      // 2. FUNCIONES 
+      input3.addEventListener("keyup", ()=>{
+        const inputText = input3.value;
+        //V1 : replaceAll PARA CAMBIAR TEXTO
+        //div3.innerHTML= inputText.replaceAll(marca,nuevaMarca );
+        //v2: replace +  regex para cambiar nuestro texto
+        // RegExp g ---> global
+        // RegExp i ---> ignorar mayusculas-minusculas
+        const marcaRegex = new RegExp(marca, 'gi');
+        div3.innerHTML= inputText.replace(marcaRegex,nuevaMarca );
+      });
+
+
+      //FILTRADO DE PALABRAS
+      const textArea = document.getElementById("textarea");
+      const span = document.getElementById("span");
+      const  malPal = ["tonto", "bobo", "careloco", "hptas" ];
+      
+      
+      
+      textArea.addEventListener("keyup", ()=>{
+        let texto= textArea.value;
+        for(i=0; i< malPal.length; i++){
+            const palabra = malPal[i];
+            const  replace = "*".repeat(palabra.length);
+            
+           texto= texto.replaceAll(palabra, replace);
+        }
+        span.innerText = texto;
+      });
       
     </script>
 </body>
