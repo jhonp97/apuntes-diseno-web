@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach</title>
+    <style>
+        .u-hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum iure dignissimos quaerat inventore nemo laborum, quis tenetur ullam et? Nesciunt esse quisquam blanditiis nemo consequuntur porro dignissimos recusandae qui.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum iure dignissimos quaerat inventore nemo laborum, quis tenetur ullam et? Nesciunt esse quisquam blanditiis nemo consequuntur porro dignissimos recusandae qui.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur ipsum iure dignissimos quaerat inventore nemo laborum, quis tenetur ullam et? Nesciunt esse quisquam blanditiis nemo consequuntur porro dignissimos recusandae qui.</p>
+
+    <button class="btn">click me</button>
+    <button class="btn">click me</button>
+
+    <span class="card">lorem</span>
+    <span class="card">lorem</span>
+    <span class="card">lorem</span>
+    <span class="card">lorem</span>
+    <button class="btnToggleCard">ocultar</button>
+    <hr>
+    <br>
+    <nav id="menu"></nav>
+
+    <script>
+        // ej1. cambiar los estilos de todos los parrafos, poniendo su color en  #333 y su fuente en 16px
+
+        const listaParrafos = document.querySelectorAll("p");
+        listaParrafos.forEach((parrafo)=>{
+            parrafo.style.color="#333";
+            parrafo.style.fontSize="32px";
+        });
+
+        //2. teniendo 2 botones con class btn, usar forEacj para agregar un evento de click a cada uno, y que al hacer click, cambie su color de fondo a #007bff y texto blanco
+
+        const boton = document.querySelectorAll(".btn");
+        boton.forEach((btn)=>{
+            
+            btn.addEventListener("click",()=>{
+            btn.style.backgroundColor = "#007bff";
+                btn.style.color = "white";
+            })
+        });
+
+        // 3. Mostrar/ocultar elementos. seleccionar todos los elementos  ".card" ycrear un boton que los oculte a todos o los muestre cuando le haga click
+
+        const listaCard = document.querySelectorAll(".card");
+        const btnToggleCards = document.querySelector(".btnToggleCard");
+
+        btnToggleCards.addEventListener("click", ()=>{
+            // recorrer las trajetas para esconderlas
+            listaCard.forEach(card =>{
+                card.classList.toggle("u-hidden");
+            });
+        })
+
+        //4. Crear un menu dinamicamente dado el array ["home", "nosotros", "contacto"] usar forEach para crear un enlace <a> y agregarla a nuestro <nav id="menu"></nav>
+            // home --> <a href="#home">Home</a>
+            // nosotros -> <a href="#nosotros">Nosotros</a>
+
+            const menu = document.querySelector("#menu");
+            const listaMenu = ["Home", "Nosotros", "Contacto"];
+
+            listaMenu.forEach((item)=>{
+               const enlace = `<a href="#${item}" style="font-size: 2rem;">${item}  </a>`
+                 
+                menu.innerHTML += enlace
+
+            })
+
+
+    </script>
+</body>
+</html>
