@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cra y sello</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        .Body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+        }
+        .Content{
+            
+            background: linear-gradient( rgb(204, 250, 204), lightblue);
+            width: 40%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px ;
+            
+        }
+        .Content-title{
+            font-size: 2.5rem;
+            font-family:monospace;
+        }
+        .Content-grid{
+            display: grid;
+           justify-items: center;
+           align-items: center;
+            
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .Content-gridPlay{
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+            font-size: 1rem;
+            width: 100px;
+            height: 60px;
+            border: solid 2px gray;
+            border-radius: 10px;
+            transition: background-color 0.3s ease-in;
+        }
+        
+          
+        
+        .Content-gridPlay:hover{
+            background-color: bisque;
+            cursor: pointer;
+        }
+        .Content-gridPlay:active{
+            scale: 0.9;
+        }
+    </style>
+</head>
+<body class="Body">
+    <div class="Content">
+        <h1 class="Content-title">Escoge tu opción</h1>
+        <div class="Content-grid">
+            <button class="Content-gridPlay" id="piedra">piedra ✊</button>
+            <button class="Content-gridPlay" id="papel">papel 🖐️</button>
+            <button class="Content-gridPlay" id="tijera">tijera ✌️</button>
+            <button class="Content-gridPlay center" id="reset">Reset 🔄</button>
+            <button class="Content-gridPlay center" id="autoPlay">Autoplay 🤖</button>
+        </div>
+        <h2 id="Content-victoria">Victorias: </h2>
+        <h2 id="Content-derrotas">Derrotas</h2>
+        <p id="Content-mensaje"></p>
+    </div>
+    
+
+
+    <script>
+        
+        piedra = document.getElementById("piedra");
+        papel = document.getElementById("papel");
+        tijera = document.getElementById("tijera");
+        victorias = document.getElementById("victorias");
+        derrotas = document.getElementById("derrotas");
+        mensaje = document.getElementById("mensaje");
+
+        let cantGanaste = 0;
+        let cantPerdiste = 0;
+        let cantEmpate = 0;
+
+        piedra.addEventListener("click", ()=>{
+            jugar("piedra");
+        });
+        papel.addEventListener("click", ()=>{
+            jugar("papel");
+        });
+        tijera.addEventListener("click", ()=>{
+            jugar("tijera");
+        })
+        
+        // funcion principal
+        function jugar(usuario){
+
+            const jugadorIa = seleccionIa();
+            console.log(`yo tiré ${usuario} la IA tiro ${jugadorIa}` );
+            const resultado = ganador(usuario, jugadorIa);
+            console.log(resultado);
+
+            if (resultado=="ganaste"){cantGnaste++;}
+            if (resultado=="Perdiste"){cantPerdiste++;}
+            if (resultado=="Empate"){cantEmpate++;}
+        };
+        // selleccion ia
+        function seleccionIa(){
+            const opciones = [ "piedra", "papel", "tijera"];
+            const num = Math.floor(Math.random() *opciones.length);
+            return opciones[num];
+
+        } 
+
+        //ganador entre j1 e Ia
+        function ganador(jugador1, ia){
+            if(jugador1===ia){
+                return "juego empatado";
+            }else if(
+                jugador1 == "piedra" && ia=="tijera" ||
+                jugador1 == "tijera" && ia=="papel" ||
+                jugador1== "papel" && ia=="piedra"){
+                    return `jugador1 saca ${jugador1} y le gana a ia con ${ia}`; 
+                }else{
+                    return `ia saca ${ia} y le gana a jugador1 con ${jugador1}`
+                }
+                
+            };
+           
+            //imprimir resultado
+        function imprimirResultado(){
+            console.log(jugar());
+        }
+    </script>
+</body>
+</html>

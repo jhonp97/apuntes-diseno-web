@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cra y sello</title>
+</head>
+<body>
+    <button id="btn">Tirar moneda</button>
+    <h1 id="resultado"></h1>
+    <p id="cantidad"></p>
+    <p id="caras"></p>
+    <p id="sellos"></p>
+    <p id="porcentaje"></p>
+
+
+
+    <script>
+        const btn = document.getElementById("btn");
+        const resultado = document.getElementById("resultado");
+        const cantidad = document.getElementById("cantidad");
+        const caras = document.getElementById("caras");
+        const sellos = document.getElementById("sellos");
+        const porcentaje = document.getElementById("porcentaje");
+
+        cantCaras =0;
+        cantsellos =0;
+
+
+        btn.addEventListener("click", ()=>{
+            const numRnadom = Math.random();
+
+            const moneda = (numRnadom>0.5) ? "Cara" : "Sellos"
+            const clicks = moneda== "Cara" ?cantCaras++ : cantsellos ++;
+
+            const porcentajes = parseInt(cantCaras/(cantCaras+cantsellos)*100)
+            
+            resultado.innerText = moneda;
+            cantidad.innerText = `tiros = ${cantCaras+cantsellos}`;
+            caras.innerText = `Caras = ${cantCaras}`;
+            sellos.innerText = `Sellos = ${cantsellos}`;
+            porcentaje.innerText = `porcentaje de caras es ${porcentajes}% `;
+
+        
+        })
+    </script>
+</body>
+</html>
