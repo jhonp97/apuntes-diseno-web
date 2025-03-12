@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Con Evento</title>
+</head>
+<body>
+    <form id="formulario" action="#">
+        <label for="">Nombre</label>
+        <input type="text" name="txtNombre" id="txtNombre">
+        <span id="errorNombre">El nombre es obligatorio</span>
+        <br>
+        <button type="submit">Enviar</button>
+        
+    </form>
+
+    <script>
+        const form= document.querySelector("#formulario");
+        const msgError = document.getElementById("errorNombre");
+        const txtNombre = document.querySelector("#txtNombre");
+
+        const btn = document.querySelector("button");
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault(); // decirle a mi elemento que no haga lo que pensaba hacer
+            console.log("submit de formulario")
+
+            if(txtNombre.value.trim() ===""){
+                alert("Error");
+            }else{
+                alert("Ok")
+            }
+        })
+        
+
+
+    </script>
+    
+</body>
+</html>

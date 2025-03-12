@@ -154,7 +154,7 @@ const libros = [
     {titulo: "La odisea", autor: "homero"},
 ];
 
-let buscador = libros.find(libro => libro.titulo.toLowerCase()== "la odisea" || libro.titulo.toUpperCase()== "la Odisea");
+let buscador = libros.find(libro => libro.titulo.toLowerCase().includes("cien años") || libro.titulo.toUpperCase()== "cien Años");
 console.log(buscador)
 ```
 3b. Usar los metodos de string para busquedad parciales "cien años"

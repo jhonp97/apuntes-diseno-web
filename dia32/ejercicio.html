@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio</title>
+
+    <style>
+        .Div{
+            width: 300px;
+            height: 300px;
+            background-color: aliceblue;
+            margin-bottom: 50px;
+        }
+
+        .Div2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            width: 300px;
+            height: 300px;
+            background-color: rgb(99, 163, 220);
+        }
+
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="Div" id="div1">
+        <button id="btnRojo">Fondo Rojo!</button>
+        <button id="btnAzul">Fondo Azul!</button>
+        <button id="btnColor">cambiar color</button>
+    </div>
+    <div class="Div2" id="div2">
+        <!-- <button id="btnHover">Hazme Click!</button> -->
+    </div>
+
+    <script>
+        const div1 = document.querySelector("#div1");
+        const btnRojo = document.querySelector("#btnRojo");
+        const btnAzul = document.querySelector("#btnAzul");
+        const btnColor = document.querySelector("#btnColor");
+        const listaColores = ["red", "blue", "yellow", "green"]
+        let colorId = 0;
+
+        
+
+        //const btnHover = document.querySelector("#btnHover");
+        btnColor.addEventListener("click", cambiarColorSimple)
+        btnRojo.addEventListener("click",()=> cambiarColor("red"));
+        btnAzul.addEventListener("click", ()=>  cambiarColor("blue"));
+
+        function cambiarColor(color){
+            div1.style.background = color;
+        }
+
+        function cambiarColorSimple(){
+            colorId++;
+            if(colorId == listaColores.length){
+                colorId=0;
+            }
+            div1.style.background= listaColores[colorId]
+            
+        }
+        
+        const div2 = document.querySelector("#div2");
+
+        div2.addEventListener("mouseover", ()=>{
+            div2.textContent = "Soy un texto"
+        });
+        div2.addEventListener("mouseout", () => {
+            div2.textContent = " " 
+        });
+           
+        
+    </script>
+</body>
+</html>
