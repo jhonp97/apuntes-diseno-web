@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras 2</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <h1>Menu de Cafeteria 2</h1>
+
+    <pre>
+        crear 3 secciones (cafe, bocadillo, bebida)
+        para cada seccion: crear 3 botones 
+        - agregar 1 al carrito 
+        - agregar 2 al carrito 
+        - agregar 3 al carrito
+        Agregar un boton al final para ver el total de items
+        agregar un boton para vaciar el carrito
+    </pre>
+
+    <section class="cafe" id="cafe">
+        <h2>Café</h2>
+        Agregar:
+
+        <br>
+        <button  class="btn" data-cant="1" data-tipo="cafe">agregar 1</button>
+        <button  class="btn" data-cant="2" data-tipo="cafe">agregar 2</button>
+        <button  class="btn" data-cant="3" data-tipo="cafe">agregar 3</button>
+
+
+
+    </section>
+    <hr>
+    <section class="bocadillo" id="bocadillo">
+        <h2>Bocadillo</h2>
+
+        Agregar:
+        <br>
+        <button  class="btn" data-cant="1" data-tipo="boca">Agregar 1</button>
+        <button  class="btn" data-cant="2" data-tipo="boca">Agregar 2</button>
+        <button  class="btn" data-cant="3" data-tipo="boca">Agregar 3</button>
+
+
+    </section>
+    <hr>
+    <section class="bebida" id="bebida">
+        <h2>Bebida</h2>
+
+        Agregar:
+        <br>
+        <button  class="btn" data-cant="1" data-tipo="drink">agregar 1</button>
+        <button  class="btn" data-cant="2" data-tipo="drink">agregar 2</button>
+        <button  class="btn" data-cant="3" data-tipo="drink">agregar 3</button>
+
+
+
+    </section>
+    <br>
+    <div>
+        <!-- <button id="total">Total</button> -->
+        <button id="vaciar">Vaciar carrito</button>
+        <br>
+        <div id="resultado">
+
+        </div>
+    </div>
+    <script>
+
+        // PARTE 1 VARIABLES
+        const ListaBotones = document.querySelectorAll(".btn");
+        ListaBotones.forEach( btn => {
+            btn.addEventListener("click", AgregarCarrito);
+        })
+
+        const btnTotal = document.querySelector("#total");
+        const btnVaciar = document.querySelector("#vaciar");
+        const resultado = document.querySelector("#resultado");
+
+        let totalItems = 0;
+        let cantCafe = 0;
+        let cantBoca = 0;
+        let cantBebidas = 0;
+
+
+        
+
+        // btnTotal.addEventListener("click", MostrarTotal);
+        btnVaciar.addEventListener("click", BorrarCarrito);
+
+        //funcion de agregar a carrito
+        function AgregarCarrito(e) {
+            const item = e.target;
+            console.log(item);
+
+            const cant = parseInt(item.getAttribute("data-cant"));
+            const tipo = item.getAttribute("data-tipo");
+
+
+            console.log("agregando cantidad: ", cant);
+            switch (tipo) {
+                case "cafe": cantCafe += cant; break;
+                case "bocadillos": cantBoca += cant; break;
+                case "bebida": cantBebidas += cant; break;
+            }
+            totalItems += cant;
+            MostrarTotal();
+        }
+        //funcion de mostrar totales
+        function MostrarTotal() {
+            resultado.innerHTML = `<ul>
+                <li>Cafe: ${cantCafe}</li>
+                <li>Bocadillos: ${cantBoca}</li>
+                <li>Bebidas: ${cantBebidas}</li>
+            </ul>
+            Total: ${totalItems}`;
+        }
+        // funcion de borrar carrito
+        function BorrarCarrito() {
+            totalItems = 0;
+            cantCafe = 0;
+            cantBoca = 0;
+            cantBebidas = 0;
+            MostrarTotal();
+        }
+
+        // PARTE 3: INICIAR PROGRAMA
+        MostrarTotal();
+    </script>
+</body>
+
+</html>

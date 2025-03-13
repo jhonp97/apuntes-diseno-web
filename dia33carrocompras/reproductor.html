@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: teal;
+            width: 100vw;
+            height: 100vh;
+        }
+        h3{
+            margin: 20px;
+            padding: 10px;
+            font-family: cursive;
+            font-size: 2rem;
+        }
+        
+        .card {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            background-color: antiquewhite;
+            
+        }
+        .card:hover{
+            background-color:navajowhite;
+        }
+        .card:nth-of-type(even){
+            background-color: lightcyan;
+        }
+        .card:nth-of-type(even):hover{
+            background-color: lightblue;
+        }
+        .artista{
+            font-family: cursive;
+            font-size: 1.2rem;
+
+        }
+        .mp3{
+            
+            border-radius: 30px;
+            box-shadow: 0px 0px 15px gray;
+        }
+    </style>
+</head>
+<body>
+    <h3>Reproductor</h3>
+    <div id="playList"></div>
+    
+    <script>
+        const playList = document.getElementById("playList");
+        const listaCanciones =[
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+        ];
+        const listaArtistas = [
+        "Paquita la del Barrio",
+        "Michael Jackson",
+        "Marea",
+        "INXS",
+        "Amaia"
+        ]
+
+        const cantItems = listaArtistas.length
+        
+        listaCanciones.forEach( (cancion,indice )=>{
+            const artista = listaArtistas[indice];
+            console.log(cancion)
+            console.log(artista);
+
+            playList.innerHTML= `
+            <div class="card">
+                <span class="artista">${listaArtistas[0]}</span>
+                <audio controls src="${listaCanciones[0]}" class="mp3">${listaCanciones[0]}</audio>
+            </div>
+            <div class="card">
+                <span class="artista">${listaArtistas[1]}</span>
+                <audio controls src="${listaCanciones[1]}" class="mp3">${cancion[1]}</audio>
+            </div>
+            <div class="card">
+                <span class="artista">${listaArtistas[2]}</span>
+                <audio controls src="${listaCanciones[2]}" class="mp3">${listaCanciones[2]}</audio>
+            </div>
+            <div class="card">
+                <span class="artista">${listaArtistas[3]}</span>
+                <audio controls src="${listaCanciones[3]}" class="mp3">${listaCanciones[3]}</audio>
+            </div>
+            <div class="card">
+                <span class="artista">${listaArtistas[4]}</span>
+                <audio controls src="${listaCanciones[4]}" class="mp3">${listaCanciones[4]}</audio>
+            </div>` 
+            
+        })
+
+        
+        
+        
+    </script>
+</body>
+</html>

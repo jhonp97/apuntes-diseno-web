@@ -27,9 +27,11 @@
             console.log("submit de formulario")
 
             if(txtNombre.value.trim() ===""){
-                alert("Error");
+                msgError.style.display = "block"
+                //alert("Error");
             }else{
-                alert("Ok")
+                msgError.style.display = "none"
+                //alert("Ok")
             }
         })
         
