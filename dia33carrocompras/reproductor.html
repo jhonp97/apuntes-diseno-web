@@ -30,10 +30,14 @@
             display: flex;
             gap: 5px;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: start;
             background-color: antiquewhite;
             
+        }
+        .card img{
+            width: 100px;
+            height: auto;
         }
         .card:hover{
             background-color:navajowhite;
@@ -54,11 +58,26 @@
             border-radius: 30px;
             box-shadow: 0px 0px 15px gray;
         }
+
+        .controllers{
+            margin: 20px;
+
+        }
     </style>
 </head>
 <body>
     <h3>Reproductor</h3>
     <div id="playList"></div>
+    <div id="cancionActual">
+        Acá irá la canción actual
+    </div>
+    <div class="controllers">
+        <button id="btn3">Tema 3</button>
+        <button id="play">Play</button>
+        <button id="pausa">pausa</button>
+        <button id="anterior">anterior</button>
+        <button id="siguiente">siguiente</button>
+    </div>
     
     <script>
         const playList = document.getElementById("playList");
@@ -77,38 +96,85 @@
         "Amaia"
         ]
 
-        const cantItems = listaArtistas.length
-        
-        listaCanciones.forEach( (cancion,indice )=>{
-            const artista = listaArtistas[indice];
-            console.log(cancion)
-            console.log(artista);
+        const listaCover=[
+        "https://picsum.photos/id/237/200/300",
+        "https://picsum.photos/id/23/200/300",
+        "https://picsum.photos/id/27/200/300",
+        "https://picsum.photos/id/231/200/300",
+        "https://picsum.photos/id/21/200/300",
+        ];
 
-            playList.innerHTML= `
-            <div class="card">
-                <span class="artista">${listaArtistas[0]}</span>
-                <audio controls src="${listaCanciones[0]}" class="mp3">${listaCanciones[0]}</audio>
-            </div>
-            <div class="card">
-                <span class="artista">${listaArtistas[1]}</span>
-                <audio controls src="${listaCanciones[1]}" class="mp3">${cancion[1]}</audio>
-            </div>
-            <div class="card">
-                <span class="artista">${listaArtistas[2]}</span>
-                <audio controls src="${listaCanciones[2]}" class="mp3">${listaCanciones[2]}</audio>
-            </div>
-            <div class="card">
-                <span class="artista">${listaArtistas[3]}</span>
-                <audio controls src="${listaCanciones[3]}" class="mp3">${listaCanciones[3]}</audio>
-            </div>
-            <div class="card">
-                <span class="artista">${listaArtistas[4]}</span>
-                <audio controls src="${listaCanciones[4]}" class="mp3">${listaCanciones[4]}</audio>
-            </div>` 
+       
+        const play = document.getElementById("play");
+        const pausa = document.getElementById("pausa");
+        const anterior = document.getElementById("anterior");
+        const siguiente = document.getElementById("siguiente");
+       
+
+        
+        
+
+
+       
+
+        // Parte 1
+        
+        const controllers = document.querySelector(".controllers");
+        const btn3 = controllers.querySelector("#btn3");
+        const cancionActual = document.querySelector("#cancionActual");
+
+        let idCancion = 1; // id de la canción reproduciondose.
+
+        // const listaBotones = controllers.querySelectorAll("button");
+        // console.log("Los botones son:", listaBotones);
+listaCanciones.forEach( (cancion, idx) => {
+
+            // accedemos a sus elementos relacionados
+            const artista = listaArtistas[idx];
             
+            const imagen = listaCover[idx];
+
+            // console.log(cancion);
+            // console.log(artista);
+
+            // el += concatena el valor anterior con este nuevo valor.
+            
+            playList.innerHTML += `<div class="card" id="${idx}">
+                                        <img src="${imagen}" />
+                                        <div>
+                                            <h3>${artista}</h3>
+                                            <span>${cancion}</span>
+                                        </div>
+                                    </div>`;
+
+        });
+const handleCargarCancion = ()=> {
+            // imprimir en consola los datos de canción #i
+            // console.log("me hicieron click en tema: ",i);
+
+            const artista = listaArtistas[idCancion];
+            const cancion = listaCanciones[idCancion];
+
+            console.log("El artista es: ",artista, " y la cancion es: ", cancion);
+
+            cancionActual.innerHTML = ` <h3>${artista}</h3>
+                                        <span>${cancion}</span>`;
+        }
+
+btn3.addEventListener("click", ()=> {
+            idCancion=3;
+            handleCargarCancion();
+        });
+// Agregar eventListener de click al documento
+        // podemos acceder a distinos valores como por ej: al id del target.
+        document.addEventListener("click", (e)=> {
+            console.log(event.target.id);
+            handleCargarCancion();
         })
 
-        
+        // Parte 3
+        // Reprodución canción actual
+        handleCargarCancion();
         
         
     </script>
