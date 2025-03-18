@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bloque{
+            display: none;
+        }
+
+        .bloque.active{
+            display: block;
+    
+        }
+
+        .tabList{
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .tab.active{
+            border-bottom: 2px solid red;
+        }
+        .tab:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pestañas / Tabs</h1>
+    
+
+    <ul class="tabList">
+        <li class="tab">Boton 1</li>
+        <li class="tab">Boton 2</li>
+        <li class="tab">Boton 3</li>
+    </ul>
+
+
+    <!-- <div class="bloque">a mi no me seleccionaron</div> -->
+
+    <main class="contentList">
+        <div class="bloque active">Contenido 1</div>
+        <div class="bloque">Contenido 2</div>
+        <div class="bloque">Contenido 3</div>
+    </main>
+
+
+    <script>
+        const containerBloques = document.querySelector(".contentList");
+        const listaBloques = containerBloques.querySelectorAll(".bloque");
+        const listaTabs = document.querySelectorAll(".tab");
+
+        // listaBloques.forEach((bloque)=>{
+        //    console.log(bloque);
+        // })
+
+        listaTabs.forEach((tab, idx)=>{
+
+            //posicion de la lista tabs:
+            //console.log(idx);
+
+            //console.log(tab);
+            //console.log(listaTabs[idx]);
+            //console.log(listaBloques[idx]);
+
+            listaTabs[idx].addEventListener("click", ()=>{
+
+                // A TODOS LOS BLOQUES SACARLE LA CLASE .ACTIVE
+                listaBloques.forEach( (bloque, id) =>{
+                    listaBloques[id].classList.remove("active");
+                    listaTabs[id].classList.remove("active");
+                })
+
+                // AGREGAR LA CLASE .ACTIVE AL BLOQUE QUE ME INTERESA
+                listaBloques[idx].classList.add("active");
+                listaTabs[idx].classList.add("active");
+            });
+        })
+    </script>
+</body>
+</html>
