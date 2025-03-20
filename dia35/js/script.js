@@ -55,3 +55,12 @@
 const cancionActual = document.getElementById("cancionActual");
 const urlCancion = document.getElementById("urlCancion");
 
+const cardCancion = containerCanciones.querySelectorAll(".cardCancion");
+            
+        cardCancion.forEach((tarjeta)=>{
+            tarjeta.addEventListener("click", ()=>{
+                 const titulo = tarjeta.querySelector(".titleCancion").textContent;
+                cancionActual.textContent = titulo;
+
+        })
+            })
