@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DParralax Ej2</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="/dia39/js/parallax.js" defer></script>
+</head>
+
+<body>
+    <section class="seccion normal">
+        <h1>mas contenido normal entre secciones
+           <p>sigue haciendo scroll</p>
+        </h1>
+    </section>
+    <!-- seccion parallax 1  -->
+    <section class="parallax-contenedor" id="seccion-1">
+        <!-- Elemento que contenga al fondo de nuestra ventana -->
+        <div class="parallax-bg" style="background-image: url('/dia39/img/fondo.png')"></div>
+
+        <div class="parallax-contenido">
+            <h2>Tseccion uno</h2>
+            <p>Este contenido está sobre el parallax</p>
+            <!-- añadir una imagen pequeña que tambien se mueva -->
+            <img src="/dia39/img/lobo-removebg-preview.png" alt="lobo" class="parallax-flotante" id="flotante-1"
+                data-parallax-type="moveY, rotate" data-parallax-speed="0.2" data-parallax-direction="-1">
+            <!-- direction -1 invierte el movimiento/ rotqacion base -->
+        </div>
+    </section>
+
+    <!-- seccion parallax 2  -->
+    <section class="seccion normal">
+        <h1>mas contenido normal entre secciones
+        <p>sigue haciendo scroll</p>
+        </h1>
+    </section>
+    <section class="parallax-contenedor" id="seccion-2">
+        <div class="parallax-bg" style="background-image: url('/dia39/img/fondo2.png')"></div>
+        <div class="parallax-contenido">
+            <h2>Tseccion uno</h2>
+            <p>Este contenido está sobre el parallax</p>
+            <!-- añadir una imagen pequeña que tambien se mueva -->
+            <img src="/dia39/img/coyote.png.png" alt="lobo" class="parallax-flotante" id="flotante-2"
+                data-parallax-type="moveX, rotate" data-parallax-speed="0.2" data-parallax-direction="-1">
+            <!-- direction -1 invierte el movimiento/ rotqacion base -->
+        </div>
+    </section>
+
+    <!-- seccion parallax 3  -->
+    <section class="seccion normal">
+        <h1>mas contenido normal entre secciones
+            <p>sigue haciendo scroll</p>
+        </h1>
+    </section>
+    <section class="parallax-contenedor" id="seccion-3">
+        <div class="parallax-bg" style="background-image: url('/dia39/img/fondo3.jpg')"></div>
+        <div class="parallax-contenido">
+            <h2>seccion uno</h2>
+            <p>Este contenido está sobre el parallax</p>
+            <!-- añadir una imagen pequeña que tambien se mueva -->
+            <img src="/dia39/img/gato.png" alt="lobo" class="parallax-flotante" id="flotante-3"
+                data-parallax-type="moveY, opacity" data-parallax-speed="0.5">
+            <!-- direction -1 invierte el movimiento/ rotqacion base -->
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
